@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genshin-Inspired Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="picture-container">
+        <img src="grad-pic.jpg" alt="Jash Ferrer" class="picture">
+    </div>
+    <div class="container">
+        <!--Icon-->
+        <header class="header">
+            <div class="vision">
+                <img src="cryo-icon.png" alt="Cryo Icon">
+                <!--icon img here-->
+                <span>Cryo/Kuerie</span>
+            </div>
+            <h1>Welcome to my Genshin-Inspired Portfolio!</h1>
+        </header>
+
+        <!--Sidebar-->
+        <aside class="sidebar">
+            <nav>
+                <button class="tab-button active" data-tab="attributes">Attributes</button>
+                <button class="tab-button" data-tab="skills">Skills</button>
+                <button class="tab-button" data-tab="experience">Experience</button>
+                <button class="tab-button" data-tab="talents">T&H</button>
+                <button class="tab-button" data-tab="profile">Profile</button>
+                <button class="tab-button" data-tab="contacts">Contact Me</button>
+            </nav>
+            <div class="sidebar-content">
+                <div class="about-content active" data-tab="attributes">
+                    <h2>Attributes</h2>
+                    <p> - Curious and creative thinker with a love for exploration </p>
+                    <p> - Thrives on deep, meaningful connections </p>
+                    <p> - Adaptable and quick learner </p>
+                    <p> - Team player </p>
+                    <p> - Calmly competitive, always striving to outdo her personal best </p>
+                </div>
+                <div class="about-content hidden" data-tab="skills">
+                    <h2>Skills</h2>
+                    <div class="skill">
+                        <label>Technical Skills <span class="percentage">(70%)</span></label>
+                        <div class="progress-bar">
+                            <div class="progress cryo" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>Soft Skills <span class="percentage">(75%)</span></label>
+                        <div class="progress-bar">
+                            <div class="progress hydro" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>Strategic Skills <span class="percentage">(75%)</span></label>
+                        <div class="progress-bar">
+                            <div class="progress dendro" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>Practical Skills <span class="percentage">(65%)</span></label>
+                        <div class="progress-bar">
+                            <div class="progress geo" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>Social Skills <span class="percentage">(50%)</span></label>
+                        <div class="progress-bar">
+                            <div class="progress aero" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content hidden" data-tab="experience">
+                    <h2>Experience</h2>
+                    <h3>Have basic knowledge in:</h3>
+                    <p> - C Programming </p>
+                    <p> - HTML/CSS </p>
+                    <p> - JavaScript </p>
+                    <p> - Python </p>
+                </div>
+                <div class="about-content hidden" data-tab="talents">
+                    <h2>Talents & Hobbies</h2>
+                    <p> - Writing </p>   
+                    <p> - Listening to Music </p>
+                    <p> - Drawing </p>   
+                    <p> - Photograpgy </p>
+                    <p> - Gaming </p>    
+                    <p> - Reading </p>
+                </div>
+                <div class="about-content hidden" data-tab="profile">
+                    <h2>Profile</h2>
+                    <h3><i class="fas fa-info-circle"></i> Personal Bio:</h3>
+                    <p>A curious and passionate individual with a deep interest in technology, gaming, and creative development. As someone who thrives on exploration and innovation, I find joy in tackling challenges that push the boundaries of what I know. Whether it's coding a new project, unraveling complex systems, or simply immersing myself in the gaming world, I’m constantly searching for ways to connect ideas and enhance my own experiences.</p>
+                    <h3><i class="fas fa-briefcase"></i> Professional Overview:</h3>
+                    <p>Focused on building a strong foundation in ICT, I aim to approach every project with curiosity, precision, and a fresh perspective. I enjoy problem-solving and learning through challenges, always eager to refine my skills and contribute meaningfully to projects. My dream is to use my technical knowledge and creativity to create solutions and experiences, whether in game development or other tech-driven fields.</p>
+                    <blockquote>"I analyze therefore I am.... confused."</blockquote>
+                </div>
+                <div class="about-content hidden" data-tab="contacts">
+                    <h2>Contact Me</h2>
+                    <p>Get in touch with me!</p>
+
+                    <!--Contact Form-->
+                    <form action="https://getform.io/f/aollrzgb" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="name" placeholder="Enter your Name" required>
+                        <input type="email" name="email" placeholder="Enter your Email" required>
+                        <textarea name="message" placeholder="Enter your Message" rows="7" required></textarea>
+                        <input type="hidden" name="_gotcha" style="display:none !important">
+                        <button type="submit" class="btn">Send</button>
+                     </form>
+                </div>
+            </div>
+        </aside>
+
+        <!--Main Panel-->
+        <main class="main-panel">
+            <div class="tab-content active" id="attributes">
+                <h2>Jash Ferrer</h2>
+                <h3>Level: 19</h3>
+            </div>
+            <div class="tab-content hidden" id="skills">
+                <h2>Stats</h2>
+                <div class="skills">
+                    <label>Creativity</label>
+                    <div class="progress-bar">
+                        <div class="progress cryo" style="width: 85%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>Problem Solving</label>
+                    <div class="progress-bar">
+                        <div class="progress cryo" style="width: 80%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>Coding</label>
+                    <div class="progress-bar">
+                        <div class="progress cryo" style="width: 40%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>Experience</label>
+                    <div class="progress-bar">
+                        <div class="progress cryo" style="width: 50%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>Social</label>
+                    <div class="progress-bar">
+                        <div class="progress cryo" style="width: 50%;">
+                        </div>
+                    </div>
+                </div>
+                <!--More Stats-->
+                    <p>A curious and creative soul who thrives in the balance between intellect and artistry. With an independent spirit and a quiet persona, she navigates life seeking meaning, crafting ideas, and cherishing deep connections—all while embracing her journey with authenticity.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>    
+</body>
+</html>

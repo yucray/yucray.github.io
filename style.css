@@ -1,0 +1,1802 @@
+/* CRYO-THEMED */
+:root {
+    --background: #1e202e;
+    --cryo-light: #7ac4f2;
+    --cryo-dark: #284c7a;
+    --text: #ceecff;
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text);
+    background: url('genshin_impact_template_cryo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    flex-direction: row; /* align horizontally */
+    align-items: center; /* align items vertically in the same line */
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1650px;
+    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 30rem;
+    background: rgba(0, 0, 0, 0.19);
+    border-radius: 0px;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* VISION */
+.vision {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    font-size: 2rem;
+    color: var(--cryo-light);
+    margin: 20px 0 10px;
+}
+
+.vision img {
+    width: 100px; /* icon size */
+    height: auto;
+}
+
+.vision span {
+    font-size: 2.5rem; /* size of Cryo/Kuerie */
+}
+
+
+/* PICTURE */
+.picture-container {
+    display: flex;
+    justify-content: right; /* Center horizontally */
+    align-items: center;
+    margin-top: 10rem;
+    margin-right: 5rem;
+}
+
+.picture {
+    width: 180px; /* Adjust size as needed */
+    height: 180px;
+    border-radius: 30%; /* Makes it circular */
+    border: 3px solid var(--cryo-light); /* Optional: Add a border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow */
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    margin: 0 auto;
+    height: 100vh;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 2rem;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    position: fixed;
+    top: 15rem;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction:left;
+    gap: 5px;
+}
+
+/* Sidebar Buttons */
+.tab-button {
+    background: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.tab-button.active {
+    background: var(--cryo-dark);
+}
+
+.tab-button:hover {
+    background: var(--cryo-light);
+    color: var(--background);
+}
+
+
+/* GENERAL about-content */
+.about-content {
+    display: none;
+    flex-direction: column; /* Ensure text is vertically aligned */
+    gap: 3rem;
+    text-align: left;
+    position: fixed;
+    top: 15rem;
+    left: 22rem;
+    right: 10rem;
+    padding: 1.5rem;
+    padding-top: 0%;
+    border-radius: 10px; /* smooth corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out; /* smooth transitions */
+}
+
+.about-content.active {
+    display: flex; /* Show only the active tab's content */
+}
+
+.about-content h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.about-content p {
+    font-size: 1.7rem;
+    line-height: 1.5;
+    margin: 0;
+    margin-top: -2rem;
+    margin-right: 50rem;
+}
+
+/* STYLING FOR THE TABS */
+
+/* data-tab="attributes" */
+.about-content[data-tab="attributes"] {
+    background: linear-gradient(to bottom, #12121275, #1e1e1e6d); /* gradient background */
+    border: 1.5px solid #7ac4f2a9; /* outline the box */
+    padding: 0.5rem 0 2rem 2rem; /* space around content */
+    border-radius: 10px; /* smooth corners */
+    color: #fff; /* text color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* depth */
+    display: none; /* default hidden */
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    position: fixed;
+    top: 15rem; 
+    left: 22rem; /* center horizontally */
+    width: 52%; /* adjust the space it will occupy */
+    max-height: 75vh; /* prevents from covering whole screen */
+    transition: all 0.3s ease-in-out;
+}
+
+.about-content[data-tab="attributes"].active {
+    display: flex;
+}
+
+.about-content[data-tab="attributes"]:hover {
+    background: #1e1e1ebd; /* lighter on hover */
+    transform: scale(1.02); /* zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* shadow */
+}
+
+.about-content[data-tab="attributes"] h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--cryo-light); 
+    margin-bottom: 2rem;
+}
+
+.about-content[data-tab="attributes"] p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    margin-right: 0;
+}
+
+
+/* data-tab="skills" */
+.about-content[data-tab="skills"] {
+    background: linear-gradient(to bottom, #12121275, #1e1e1e6d);
+    border: 1.5px solid #7ac4f2a9;
+    padding: 0.5rem 0 5rem 2rem;
+    border-radius: 10px; 
+    color: #fff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    position: fixed;
+    top: 15rem;
+    left: 22rem;
+    width: 53%;
+    max-height: 75vh;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-content[data-tab="skills"].active {
+    display: flex;
+}
+
+.about-content[data-tab="skills"]:hover {
+    background: #1e1e1e;
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Each skill block */
+.about-content[data-tab="skills"] .skill {
+    margin-bottom: 10px;
+    width: 70%; 
+    text-align: left;
+}
+
+.about-content[data-tab="skills"] h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--cryo-light); 
+    margin-bottom: 2rem;
+}
+
+.about-content[data-tab="skills"] .skill label {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: var(--text); 
+    margin-left: 1rem;
+    margin-bottom: 5px; 
+}
+
+.about-content[data-tab="skills"] .progress-bar {
+    background: rgba(225, 225, 225, 0.129);
+    height: 20px;
+    border-radius: 10px;
+    margin-left: 1.2rem;
+    margin-top: 5px;
+    width: 100%; 
+    padding: 0;
+}
+
+.about-content[data-tab="skills"] .progress.cryo {
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, #3a62d1, #1a4b8a);
+    border-radius: 10px;
+}
+
+.about-content[data-tab="skills"] .progress.hydro {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #3a62d1, #1a4b8a);
+    border-radius: 10px;
+}
+
+.about-content[data-tab="skills"] .progress.dendro {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #3a62d1, #1a4b8a);
+    border-radius: 10px;
+}
+
+.about-content[data-tab="skills"] .progress.geo {
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, #3a62d1, #1a4b8a);
+    border-radius: 10px;
+}
+
+.about-content[data-tab="skills"] .progress.aero {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, #3a62d1, #1a4b8a);
+    border-radius: 10px;
+}
+
+
+.about-content[data-tab="skills"] .skill .percentage {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-left: 10px;
+}
+
+.about-content[data-tab="skills"] .skill label:hover {
+    color: var(--cryo-dark);
+    cursor: pointer;
+}
+
+.about-content[data-tab="skills"] .progress-bar:hover .progress {
+    box-shadow: 0 0 10px var(--cryo-light);
+}
+
+
+/* data-tab="experience" */
+.about-content[data-tab="experience"] {
+    background: linear-gradient(to bottom, #12121275, #1e1e1e6d);
+    border: 1.5px solid #7ac4f2a9;
+    padding: 0.5rem 0 5rem 2rem;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    position: fixed;
+    top: 15rem;
+    left: 22rem;
+    width: 53%;
+    max-height: 75vh;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-content[data-tab="experience"].active {
+    display: flex;
+}
+
+.about-content[data-tab="experience"]:hover {
+    background: #1e1e1e; 
+    transform: scale(1.02); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-content[data-tab="experience"] h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--cryo-light); 
+    margin-bottom: -2rem;
+}
+
+.about-content[data-tab="experience"] h3{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-content[data-tab="experience"] p {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1rem !important;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+
+/* data-tab="talents" */
+.about-content[data-tab="talents"] {
+    background: linear-gradient(to bottom, #12121275, #1e1e1e6d); 
+    border: 1.5px solid #7ac4f2a9;
+    padding: 0.5rem 0 5rem 2rem;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: none; 
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    position: fixed;
+    top: 15rem; 
+    left: 22rem; 
+    width: 53%; 
+    max-height: 75vh; 
+    transition: all 0.3s ease-in-out;
+}
+
+.about-content[data-tab="talents"].active {
+    display: flex; 
+}
+
+.about-content[data-tab="talents"]:hover {
+    background: #1e1e1e; 
+    transform: scale(1.02); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-content[data-tab="talents"] h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--cryo-light); 
+    margin-bottom: 2rem;
+}
+
+.about-content[data-tab="talents"] p {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 2rem;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+
+/* data-tab="profile" */
+.about-content[data-tab="profile"] {
+    background: linear-gradient(to bottom, #12121275, #1e1e1e6d);
+    border: 1.5px solid #7ac4f2a9; 
+    padding: 1.5; 
+    border-radius: 10px; 
+    color: #fff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    display: none;
+    flex-direction: column;
+    gap: 1rem; 
+    text-align: left;
+    position: fixed;
+    top: 14rem;
+    left: 22rem;
+    width: 52%;
+    max-height: 75vh;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-content[data-tab="profile"].active {
+    display: flex;
+}
+
+.about-content[data-tab="profile"]:hover {
+    background: #1e1e1e;
+    transform: scale(1.02); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
+}
+
+/* Headings and Icons */
+.about-content[data-tab="profile"] h2{
+    font-family: 'Courier New', Courier, monospace; 
+    color: var(--cryo-light); 
+    text-align: center;
+}
+.about-content[data-tab="profile"] h3 {
+    font-size: 1.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--cryo-light); 
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.about-content[data-tab="profile"] i {
+    color: var(--cryo-light); /* Icon color */
+    margin-right: 0.8rem; /* Space between icon and text */
+}
+
+.about-content[data-tab="profile"] p {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.about-content[data-tab="profile"] blockquote {
+    font-style: italic;
+    font-size: 1.5em;
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--cryo-light); /* quotation bar */
+    color: var(--cryo-light);
+}
+
+/* Dividers for Sections */
+.about-content[data-tab="profile"] h3 {
+    border-bottom: 1px solid var(--cryo-light); 
+    padding-bottom: 0.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+
+/* data-tab="contacts" */
+.about-content[data-tab="contacts"] {
+    background: linear-gradient(to bottom, #12121275, #1e1e1e6d);
+    border: 1.5px solid #7ac4f2a9; 
+    padding: 1.5; 
+    border-radius: 10px; 
+    color: #fff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    gap: 1rem; 
+    text-align: left;
+    position: fixed;
+    top: 16rem;
+    left: 23rem;
+    width: 52%;
+    max-height: 75vh;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out; 
+}
+
+.about-content[data-tab="contacts"].active {
+    display: flex;
+}
+
+.about-content[data-tab="contacts"] {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 50%;
+}
+
+.about-content[data-tab="contacts"] h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--cryo-light); 
+    text-align: center;
+    font-size: 5rem;
+}
+
+.about-content[data-tab="contacts"] p {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 2rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    margin-right: 0;
+    text-align: center;
+}
+
+.about-content[data-tab="contacts"] input,
+.about-content[data-tab="contacts"] textarea {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    border: 1px solid #7ac4f2a9;
+    border-radius: 10px;
+    background: #121212;
+    color: #fff;
+    outline: none;
+    width: 90%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    margin: 0.5rem 2rem 0.5rem 3rem;
+}
+
+.about-content[data-tab="contacts"] textarea {
+    height: 150px;
+    resize: none;
+}
+
+.about-content[data-tab="contacts"] input:focus,
+.about-content[data-tab="contacts"] textarea:focus {
+    border-color: #7ac4f2;
+}
+
+.about-content[data-tab="contacts"] .btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #7ac4f2, #1e90ff);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 50%;
+    text-align: center;
+    margin: 0.5rem 2rem 0.5rem 15rem;
+}
+
+.about-content[data-tab="contacts"] .btn:hover {
+    background: linear-gradient(to right, #1e90ff, #7ac4f2);
+    transform: scale(1.05);
+}
+
+
+/* MAIN PANEL */
+.main-panel {
+    position: fixed;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-42%);
+    flex: 1;
+    flex-direction: right;
+    max-width: 430px;
+    width: 550px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.tab-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text);
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.tab-content h3 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tab-content p {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill label {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* PROGRESS BAR FOR MAIN PANEL */
+.main-panel .progress-bar {
+    background: rgba(225, 225, 225, 0.129);
+    font-size: 0.9rem;
+    height: 20px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.main-panel .progress.cryo {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cryo-light), var(--cryo-dark));
+    border-radius: 10px;
+}
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 2040px) {
+    
+    /* GLOBAL LAYOUT */
+    .header {
+        position: fixed !important;
+        width: 100%;
+        padding-right: 2px;
+    }
+    
+    .header h1 {
+        font-size: 35px !important;
+        margin-right: 28rem;
+    }
+
+    .vision {
+        gap: 5 px;
+        font-size: 2rem;
+        margin: 10px 0 5px; 
+    }
+    
+    .vision img {
+        width: 80px;
+    }
+    
+    .vision {
+        font-size: 0.5rem;
+        margin: 5px 0 3.5px;
+    }
+    
+    .vision span {
+        font-size: 2rem !important;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* SIDEBAR */
+    .sidebar {
+        position: fixed !important;
+        width: 150px !important;
+        padding: 1rem;
+        top: 12rem;
+        z-index: 1000 !important;
+    }
+
+    .tab-button {
+        position: sticky !important;
+        font-size: 30px !important;
+        margin: 10px 0 20px;
+        margin-left: 0.5rem !important;
+    }
+
+
+    /* GENERAL ABOUT CONTENT */
+    .about-content {
+        width: 100% !important;
+        left: 17rem !important;
+        top: 12rem !important;
+        padding: 0.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 3rem !important;
+    }
+
+    .about-content p {
+        font-size: 2rem !important;
+    }
+
+    /* ABOUT CONTENT TABS */
+    .about-content[data-tab="attributes"] {
+    padding: 0.5rem 0 2rem 2rem;
+    gap: 0.5rem;
+    top: 15rem; 
+    left: 22rem;
+    width: 52% !important;
+    max-height: 75vh;
+    }
+
+    .about-content[data-tab="attributes"] p {
+        font-size: 1.3rem !important;
+    }
+
+    .about-content[data-tab="skills"] {
+        width: 52% !important;
+    }
+
+    .about-content[data-tab="skills"] .skill {
+        margin-bottom: 5px !important;
+        width: 80% !important;
+        gap: 2rem !important;
+    }
+
+    .about-content[data-tab="skills"] h2 {
+        font-size: 3rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] .skill label {
+        font-size: 1.3rem !important;
+        margin-bottom: 10rem !important;
+        line-height: 1rem !important;
+    }
+
+    .about-content[data-tab="skills"] .progress-bar {
+        height: 15px !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] ,.progress.cryo {
+        height: 100%;
+    }
+
+    .about-content[data-tab="skills"] .skill .percentage {
+        font-size: 1rem;
+    }
+
+
+    .about-content[data-tab="experience"] {
+        width: 52% !important;
+        .gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="experience"] h2 {
+        .font-size: 3rem !important;
+    }
+
+    .about-content[data-tab="experience"] p {
+       
+        font-size: 2rem !important;
+        margin-left: 0.5rem !important;
+        margin-right: 5rem;
+    }
+
+
+    .about-content[data-tab="talents"] {
+        width: 52% !important;
+        .gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="talents"] h2 {
+        .font-size: 3rem !important;
+    }
+
+    .about-content[data-tab="talents"] p {
+        font-size: 1.3rem !important;
+        margin-left: 0.5rem !important;
+        margin-right: 5rem;
+    }
+
+
+    .about-content[data-tab="profile"] {
+        width: 52% !important;
+        gap: 0.5 !important;
+        top: 10rem !important;
+    }
+
+    .about-content[data-tab="profile"] h2{
+        font-size: 3rem !important;
+        margin-left: 0 !important;
+    }
+
+    .about-content[data-tab="profile"] h3 {
+        font-size: 1.5rem !important;;
+        margin: -0.5rem 0 1rem -1rem !important;
+    }
+    
+    .about-content[data-tab="profile"] i {
+        margin-right: 1.5rem !important;
+    }
+    
+    .about-content[data-tab="profile"] p {
+        font-size: 1.2rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 0;
+        margin-right: 0;
+        padding-left: 0.5rem;
+        margin-right: 1.5rem;
+    }
+    
+    .about-content[data-tab="profile"] blockquote {
+        font-style: italic;
+        font-size: 1.5rem !important;
+        margin-top: 0 !important; 
+        padding-left: 1rem !important;
+        border-left: 1px solid var(--cryo-light) !important;
+    }
+    
+    /* Dividers for Sections */
+    .about-content[data-tab="profile"] h3 {
+        border-bottom: 1px solid var(--cryo-light); 
+        padding-bottom: 0rem !important; 
+        margin-bottom: 1rem !important; 
+    }
+
+    .about-content[data-tab="contacts"] {
+        width: 52% !important;
+    }
+
+    .about-content[data-tab="contacts"] h2{
+        font-size: 4rem;
+        text-align: center !important;
+    }
+    
+    .about-content[data-tab="contacts"] p {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    .about-content[data-tab="contacts"] input, 
+    .about-content[data-tab="contacts"] textarea {
+    font-size: 1.3rem;
+    padding: 0.6rem;
+    width: 80%;
+    margin: 0.5rem 2rem 0.5rem 5.6rem !important;
+    } 
+    
+    .about-content[data-tab="contacts"] textarea {
+    height: 115px;
+    }
+
+    .about-content[data-tab="contacts"] .btn {
+    font-size: 1.7rem;
+    padding: 0.5rem !important;
+    color: #fff;
+    cursor: pointer;
+    width: 25% !important;
+    text-align: center;
+    margin-left: 21rem !important;
+    }
+
+
+    /* MAIN PANEL */
+    .main-panel {
+        width: 25% !important;
+        right: 3rem !important;
+        padding: 0.5rem !important;
+        top: 29rem !important;
+    }
+
+    .tab-content h2 {
+        font-size: 2rem !important;
+    }
+
+    .tab-content h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .tab-content p {
+        font-size: 1.3rem !important;
+        margin-right: 1rem !important;
+    }
+
+    .skill label {
+        font-size: 1.3rem !important;
+    }
+
+    .main-panel .progress-bar {
+        height: 15px;
+        width: 90%;
+    }
+
+}
+
+
+
+@media (max-width: 1650px) {
+    
+    /* GLOBAL LAYOUT */
+    .header {
+        position: fixed !important;
+        width: 100%;
+        padding-right: 2px;
+    }
+    
+    .header h1 {
+        font-size: 32px !important;
+        margin-right: 10rem;
+    }
+
+    .vision {
+        gap: 5 px;
+        font-size: 1rem;
+        margin: 10px 0 5px; 
+    }
+    
+    .vision img {
+        width: 70px;
+    }
+    
+    .vision {
+        font-size: 0.5rem;
+        margin: 5px 0 3.5px;
+    }
+    
+    .vision span {
+        font-size: 2rem !important;
+    }
+
+    .picture-container {
+        margin-top: 9rem !important;
+        margin-right: 2.5rem !important;
+    }
+
+    .picture {
+        width: 140px; /* Adjust size as needed */
+        height: 140px;
+        border-radius: 30%; /* Makes it circular */
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* SIDEBAR */
+    .sidebar {
+        position: fixed !important;
+        width: 150px !important;
+        padding: 1rem;
+        top: 8rem;
+        z-index: 1000 !important;
+    }
+
+    .tab-button {
+        position: sticky !important;
+        font-size: 20px !important;
+        margin: 10px 0 20px;
+        margin-left: 0.5rem !important;
+    }
+
+
+    /* GENERAL ABOUT CONTENT */
+    .about-content {
+        width: 50% !important;
+        left: 12rem !important;
+        top: 10rem !important;
+        padding: 0.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem !important;
+    }
+
+    .about-content p {
+        font-size: 1rem !important;
+    }
+
+    /* ABOUT CONTENT TABS */
+    .about-content[data-tab="attributes"] {
+    padding: 0.5rem 0 2rem 2rem;
+    gap: 0.5rem;
+    top: 15rem; 
+    left: 22rem;
+    width: 53% !important;
+    max-height: 75vh;
+    }
+
+    .about-content[data-tab="attributes"] p {
+        font-size: 1rem !important;
+    }
+
+    .about-content[data-tab="skills"] {
+        width: 53% !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .about-content[data-tab="skills"] .skill {
+        margin-bottom: 1px !important;
+        width: 80% !important;
+        gap: 2rem !important;
+    }
+
+    .about-content[data-tab="skills"] h2 {
+        font-size: 2rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .about-content[data-tab="skills"] .skill label {
+        font-size: 1rem !important;
+        margin-bottom: 2rem !important;
+        line-height: 1rem !important;
+    }
+
+    .about-content[data-tab="skills"] .progress-bar {
+        height: 12px !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] ,.progress.cryo {
+        height: 50%;
+    }
+
+    .about-content[data-tab="skills"] .skill .percentage {
+        font-size: 0.7rem;
+    }
+
+
+    .about-content[data-tab="experience"] {
+        width: 53% !important;
+        gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="experience"] h2 {
+        .font-size: 2rem !important;
+        margin-bottom: -2rem; 
+    }
+
+    .about-content[data-tab="experience"] h3{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-content[data-tab="experience"] p {
+        font-size: 1.2rem;
+        margin-left: 0.5rem !important;
+        margin-right: 5rem;
+    }
+
+
+    .about-content[data-tab="profile"] {
+        width: 53% !important;
+        gap: 0.5 !important;
+        top: 10rem !important;
+    }
+
+    .about-content[data-tab="profile"] h2{
+        font-size: 2rem !important;
+        margin-left: 0 !important;
+    }
+
+    .about-content[data-tab="profile"] h3 {
+        font-size: 1.2rem !important;;
+        margin: -0.5rem 0 1rem -1rem !important;
+    }
+    
+    .about-content[data-tab="profile"] i {
+        margin-right: 1rem !important;
+    }
+    
+    .about-content[data-tab="profile"] p {
+        font-size: 0.9rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 0;
+        margin-right: 0;
+        padding-left: 0.5rem;
+    }
+    
+    .about-content[data-tab="profile"] blockquote {
+        font-style: italic;
+        font-size: 1.1rem !important;
+        margin-top: 0 !important; 
+        padding-left: 1rem !important;
+        border-left: 1px solid var(--cryo-light) !important;
+    }
+    
+    /* Dividers for Sections */
+    .about-content[data-tab="profile"] h3 {
+        border-bottom: 1px solid var(--cryo-light); 
+        padding-bottom: 0rem !important; 
+        margin-bottom: 1rem !important; 
+    }
+
+    .about-content[data-tab="contacts"] {
+        width: 54% !important;
+    }
+
+    .about-content[data-tab="contacts"] h2{
+        font-size: 4rem;
+        text-align: center !important;
+    }
+    
+    .about-content[data-tab="contacts"] p {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    .about-content[data-tab="contacts"] input, 
+    .about-content[data-tab="contacts"] textarea {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+    width: 80%;
+    margin: 0.5rem 2rem 0.5rem 4rem !important;
+    } 
+    
+    .about-content[data-tab="contacts"] textarea {
+    height: 115px;
+    }
+
+    .about-content[data-tab="contacts"] .btn {
+    font-size: 1.5rem;
+    padding: 0.5rem !important;
+    color: #fff;
+    cursor: pointer;
+    width: 25% !important;
+    text-align: center;
+    margin-left: 16.5rem !important;
+    }
+
+
+    /* MAIN PANEL */
+    .main-panel {
+        width: 25% !important;
+        right: 1rem !important;
+        padding: 0.5rem !important;
+        top: 24rem !important;
+    }
+
+    .tab-content h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .tab-content h3 {
+        font-size: 0.8rem !important;
+    }
+
+    .tab-content p {
+        font-size: 0.9rem !important;
+        margin-right: 1rem !important;
+    }
+
+    .skill label {
+        font-size: 1rem !important;
+    }
+
+    .main-panel .progress-bar {
+        height: 15px;
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 1280px) {
+    
+    /* GLOBAL LAYOUT */
+    .header {
+        width: 100%;
+        padding-right: 2px;
+    }
+    
+    .header h1 {
+        font-size: 32px !important;
+    }
+
+    .vision {
+        gap: 5 px;
+        font-size: 1rem;
+        margin: 10px 0 5px; 
+    }
+    
+    .vision img {
+        width: 70px;
+    }
+    
+    .vision {
+        font-size: 0.5rem;
+        margin: 5px 0 3.5px;
+    }
+    
+    .vision span {
+        font-size: 2rem !important;
+    }
+
+    .picture-container {
+        margin-top: 9rem !important;
+        margin-right: 2.5rem !important;
+    }
+
+    .picture {
+        width: 120px; /* Adjust size as needed */
+        height: 120px;
+        border-radius: 30%; /* Makes it circular */
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* SIDEBAR */
+    .sidebar {
+        position: fixed !important;
+        width: 150px !important;
+        padding: 1rem;
+        top: 8rem;
+        z-index: 1000 !important;
+    }
+
+    .tab-button {
+        position: sticky !important;
+        font-size: 20px !important;
+        margin: 10 0 20 0;
+        margin-left: 0.5rem !important;
+    }
+
+
+    /* GENERAL ABOUT CONTENT */
+    .about-content {
+        width: 50% !important;
+        left: 12rem !important;
+        top: 10rem !important;
+        padding: 0.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem !important;
+    }
+
+    .about-content p {
+        font-size: 1rem !important;
+    }
+
+    /* ABOUT CONTENT TABS */
+    .about-content[data-tab="attributes"] {
+        padding: 0.5rem 0 2rem 2rem;
+        gap: 0.5rem;
+        top: 15rem; 
+        left: 22rem;
+        width: 52%;
+        max-height: 75vh;
+    }
+
+    .about-content[data-tab="attributes"] p {
+        font-size: 1rem !important;
+    }
+ 
+
+    .about-content[data-tab="skills"] .skill {
+        margin-bottom: 5px !important;
+        width: 80%;
+        gap: 2rem !important;
+    }
+
+    .about-content[data-tab="skills"] h2 {
+        font-size: 2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] .skill label {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 0.2rem !important;
+    }
+
+    .about-content[data-tab="skills"] .progress-bar {
+        height: 10px !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] ,.progress.cryo {
+        height: 50%;
+    }
+
+    .about-content[data-tab="skills"] .skill .percentage {
+        font-size: 0.8rem;
+    }
+
+
+    .about-content[data-tab="experience"] {
+        .gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="experience"] h2 {
+        .font-size: 2rem !important;
+        margin-bottom: -2rem; 
+    }
+
+    .about-content[data-tab="experience"] h3{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-content[data-tab="experience"] p {
+        font-size: 1.2rem;
+        margin-left: 0.5rem !important;
+        margin-right: 5rem;
+    }
+
+
+    .about-content[data-tab="talents"] {
+        .gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="talents"] h2 {
+        .font-size: 2rem !important;
+    }
+
+    .about-content[data-tab="talents"] p {
+        font-size: 1.5rem;
+        margin-left: 0.5rem !important;
+        margin-right: 5rem;
+    }
+
+
+    .about-content[data-tab="profile"] {
+        width: 52% !important;
+        gap: 0.5 !important;
+        top: 9rem !important;
+    }
+
+    .about-content[data-tab="profile"] h2{
+        font-size: 1.4rem !important;
+        margin-left: 0.2 rem !important;
+    }
+    .about-content[data-tab="profile"] h3 {
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        margin-left: 0.2rem;
+    }
+    
+    .about-content[data-tab="profile"] i {
+        margin-right: 1rem !important;
+    }
+    
+    .about-content[data-tab="profile"] p {
+        font-size: 0.8rem !important;
+        line-height: 1.5;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+    
+    .about-content[data-tab="profile"] blockquote {
+        font-style: italic;
+        font-size: 1rem;
+        margin-top: 0 !important; 
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--cryo-light);
+    }
+    
+    /* Dividers for Sections */
+    .about-content[data-tab="profile"] h3 {
+        border-bottom: 1px solid var(--cryo-light); 
+        padding-bottom: 0rem; 
+        margin-bottom: 1.5rem; 
+    }
+
+    .about-content[data-tab="contacts"] {
+        width: 52% !important;
+    }
+
+    .about-content[data-tab="contacts"] h2{
+        font-size: 4rem;
+        text-align: center;
+    }
+    
+    .about-content[data-tab="contacts"] p {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    .about-content[data-tab="contacts"] input, 
+    .about-content[data-tab="contacts"] textarea {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+        width: 85%;
+        margin: 0.5rem 2rem 0.5rem 3rem;
+    } 
+    
+    .about-content[data-tab="contacts"] textarea {
+        height: 115px;
+    }
+
+    .about-content[data-tab="contacts"] .btn {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        color: #fff;
+        cursor: pointer;
+        width: 30%;
+        text-align: center;
+        margin-left: 14.1rem !important;
+    }
+
+    
+
+    /* MAIN PANEL */
+    .main-panel {
+        width: 25% !important;
+        right: 0.25rem !important;
+        padding: 1rem !important;
+        top: 23rem !important;
+    }
+
+    .tab-content h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .tab-content h3 {
+        font-size: 0.8rem !important;
+    }
+
+    .tab-content p {
+        font-size: 0.9rem !important;
+        margin-right: 1rem !important;
+    }
+
+    .skill label {
+        font-size: 1rem !important;
+    }
+
+    .main-panel .progress-bar {
+        height: 15px;
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    
+    /* GLOBAL LAYOUT */
+    body {
+        display: flex;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+
+    .header {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 1rem 0 1rem !important;
+        color: red;
+        margin-left: -1rem !important;
+    }
+    
+    .header h1 {
+        text-align: center !important;
+        font-size: 1.5rem !important;
+    }
+
+    .vision {
+        gap: 5 rem !important;
+        font-size: 0.5rem !important;
+        margin: 10px 0 5px; 
+    }
+    
+    .vision img {
+        width: 4rem;
+    }
+    
+    .vision span {
+        font-size: 1.5rem !important;
+    }
+
+    .container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+    }
+      
+    aside.sidebar nav { /* Increased specificity */
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Adjust columns as needed */
+        grid-template-rows: auto auto; /* Two rows */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        gap: 0.5rem !important;
+        width: 50% !important;
+        margin: 0 auto;
+        z-index: 1000;
+    }
+
+    nav button:nth-child(5), /* Select "profile" button */
+    nav button:nth-child(6) { /* Select "contact me" button */
+        grid-column: span 2; /* Span two columns */
+        justify-self: center; /* Center horizontally within its grid area */
+    }
+      
+    /* SIDEBAR */
+    aside.sidebar { /* Increased specificity */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: row;
+        position: fixed !important;
+        width: 58% !important; /* Ensure this rule applies */
+        padding: 0;
+        top: -32rem;
+        left: 6rem !important;
+        margin-left: 0;
+        max-width: 480px;
+    }
+      
+    .tab-button {
+        text-align: center !important;
+        align-items: center !important;
+        font-size: 1rem !important;
+        margin: -1.5rem 0 1rem;
+        margin-left: 0.5rem !important;
+    }
+
+
+    /* GENERAL ABOUT CONTENT */
+    .about-content {
+        position: relative !important;
+        width: 100% !important;
+        left: 2rem !important;
+        top: 15rem !important;
+        padding: 0.1rem;
+        z-index: auto !important;
+    }
+
+    .about-content h2 {
+        font-size: 2rem !important;
+    }
+
+    .about-content p {
+        font-size: 1rem !important;
+    }
+
+    /* ABOUT CONTENT TABS */
+    .about-content[data-tab="attributes"] {
+    position: fixed !important;
+    padding: 0.5rem 0 0.5rem 2rem;
+    gap: 0.5rem;
+    top: 15rem; 
+    left: 2rem;
+    width: 80% !important;
+    max-height: 75vh;
+    }
+
+    .about-content[data-tab="attributes"] p {
+        font-size: 1rem !important;
+    }
+ 
+
+    .about-content[data-tab="skills"] {
+        position: fixed !important;
+        margin: 0 0 -20rem 0 !important;
+        padding: 0 0 0 2rem !important;
+        width: 80% !important;
+        gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] .skill {
+        padding-bottom: 0rem !important;
+        margin-bottom: 0.5rem !important;
+        width: 80%;
+        gap: 2rem !important;
+    }
+
+    .about-content[data-tab="skills"] h2 {
+        font-size: 2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] .skill label {
+        font-size: 1rem !important;
+        margin-bottom: 0.1rem !important;
+        line-height: 0.1rem !important;
+    }
+
+    .about-content[data-tab="skills"] .progress-bar {
+        height: 12px !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .about-content[data-tab="skills"] ,.progress.cryo {
+        height: 46%;
+    }
+
+    .about-content[data-tab="skills"] .skill .percentage {
+        font-size: 0.8rem;
+    }
+
+
+    .about-content[data-tab="experience"] {
+        position: fixed !important;
+        margin: 0 0 -20rem 0.5 !important;
+        padding: 0 0 1rem 1rem !important;
+        width: 83% !important;
+        gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="experience"] h2 {
+        .font-size: 2rem !important; 
+        margin-bottom: 2.5rem;
+    }
+
+    .about-content[data-tab="experience"] p {
+        font-size: 1rem !important;
+        margin-left: 0.8rem !important;
+        margin-right: 2rem;
+    }
+
+
+    .about-content[data-tab="talents"] {
+        position: fixed !important;
+        margin: 0 0 -20rem 0.5 !important;
+        padding: 0 0 1rem 1rem !important;
+        width: 83% !important;
+        gap: 1.5rem !important;
+    }
+
+    .about-content[data-tab="talents"] h2 {
+        .font-size: 2rem !important;
+    }
+
+    .about-content[data-tab="talents"] p {
+        font-size: 1.5rem;
+        margin-left: 0.5rem !important;
+        margin-right: 1rem;
+    }
+
+
+    .about-content[data-tab="profile"] {
+        position: fixed !important;
+        margin: 0 0 0 0.5 !important;
+        padding: 0 0 1rem 1rem !important;
+        width: 83% !important;
+        gap: 0.5rem !important;
+        top: 15rem !important;
+    }
+
+    .about-content[data-tab="profile"] h2{
+        font-size: 2rem !important;
+    }
+    .about-content[data-tab="profile"] h3 {
+        font-size: 1.1rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 2rem !important;
+        margin-left: -1.7rem !important;
+    }
+    
+    .about-content[data-tab="profile"] i {
+        margin-right: 1rem !important;
+    }
+    
+    .about-content[data-tab="profile"] p {
+        font-size: 0.8rem !important;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        margin-right: 1.5rem !important;
+    }
+    
+    .about-content[data-tab="profile"] blockquote {
+        font-style: italic;
+        font-size: 0.8rem;
+        margin-top: 0 !important; 
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--cryo-light);
+    }
+    
+    /* Dividers for Sections */
+    .about-content[data-tab="profile"] h3 {
+        border-bottom: 1px solid var(--cryo-light); 
+        padding-bottom: 0rem; 
+        margin-bottom: 1.5rem; 
+    }
+
+    .about-content[data-tab="contacts"] {
+        position: fixed !important;
+        margin: 0 0 0 0 !important;
+        padding: 0 0 0 0 !important;
+        width: 86% !important;
+        gap: 0.5rem !important;
+    }
+
+    .about-content[data-tab="contacts"] h2{
+        font-size: 2.5rem !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center;
+    }
+    
+    .about-content[data-tab="contacts"] p {
+        font-size: 1.1rem !important;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    .about-content[data-tab="contacts"] input, 
+    .about-content[data-tab="contacts"] textarea {
+    font-size: 0.8rem !important;
+    padding: 0.6rem !important;
+    width: 80%;
+    margin: 0.8rem 0 0 2.5rem !important;
+    } 
+    
+    .about-content[data-tab="contacts"] textarea {
+    height: 10rem !important;
+    }
+
+    .about-content[data-tab="contacts"] .btn {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    width: 30%;
+    text-align: center;
+    margin: 0.8rem 0 1.5rem 10rem !important;
+    }
+
+    
+    /* MAIN PANEL */
+    .main-panel {
+        position: relative !important; /* Use relative positioning instead of fixed */
+        width: 85% !important;
+        padding: 0 !important;
+        z-index: 1 !important;
+        margin-top: 100%;
+    }
+
+    .tab-content h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .tab-content h3 {
+        font-size: 0.9rem !important;
+    }
+
+    .tab-content p {
+        font-size: 1rem !important;
+        margin-right: 1.5rem !important;
+    }
+
+    .skill label {
+        font-size: 1rem !important;
+    }
+
+    .main-panel .progress-bar {
+        height: 12px;
+        width: 90%;
+    }
+}
